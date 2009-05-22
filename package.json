@@ -1,0 +1,8 @@
+{
+    "name": "appengine-js",
+    "author": "George Moschovitis",
+    "email": "george.moschovitis@gmail.com",
+    "contributors": [
+    ],
+    "js": "lib"
+}
