@@ -5,11 +5,11 @@ A thin wrapper around Google Appengine's low level Java APIs.
 
 Homepage: http://nitrojs.org/
 
-Source & Download: http://github.com/gmosx/appengine-js/
+Source & Download: http://github.com/gmosx/appenginejs/
 
 Mailing list: http://groups.google.com/group/nitro-devel
 
-Issue tracking: http://github.com/gmosx/appengine-js/issues
+Issue tracking: http://github.com/gmosx/appenginejs/issues
 
 IRC: #nitro on irc.freenode.net    
 
@@ -17,7 +17,7 @@ IRC: #nitro on irc.freenode.net
 Credits
 -------
 
-George Moschovitis <george-moschovitis@gmosx.com>
+George Moschovitis <george.moschovitis@gmail.com>
 
 
 License
