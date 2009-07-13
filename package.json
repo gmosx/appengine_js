@@ -2,7 +2,6 @@
     "name": "appengine",
     "author": "George Moschovitis",
     "email": "george.moschovitis@gmail.com",
-    "contributors": [
-    ],
+    "contributors": [],
     "js": "lib"
 }
