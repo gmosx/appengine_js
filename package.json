@@ -1,7 +1,9 @@
 {
     "name": "appengine",
+    "description": "A port of the Python AppEngine API to JavaScript",
+    "keywords": ["google", "appengine", "cloud", "datastore"],
     "author": "George Moschovitis",
     "email": "george.moschovitis@gmail.com",
     "contributors": [],
-    "js": "lib"
+    "lib": "lib"
 }

@@ -1,7 +1,7 @@
 Google App Engine support for JavaScript
 ========================================
 
-A thin wrapper around Google Appengine's low level Java APIs.
+A port of the Python AppEngine API to JavaScript.
 
 Homepage: http://nitrojs.org/
 
