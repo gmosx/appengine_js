@@ -14,6 +14,18 @@ Issue tracking: http://github.com/gmosx/appenginejs/issues
 IRC: #nitro on irc.freenode.net    
 
 
+What is implemented
+-------------------
+
+This library is under construction but usable. Substantial parts of the google.appengine.ext.db API are converted.
+
+
+Example
+-------
+
+For an example of the usage of this library have a look at the [blog-gae](http://github.com/gmosx/blog-gae) example.
+
+
 Credits
 -------
 
