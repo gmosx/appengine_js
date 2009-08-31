@@ -14,10 +14,48 @@ Issue tracking: http://github.com/gmosx/appenginejs/issues
 IRC: #nitro on irc.freenode.net    
 
 
-What is implemented
--------------------
+Component status
+----------------
 
-This library is under construction but usable. Substantial parts of the google.appengine.ext.db API are converted.
+This library is under construction but usable. Substantial parts of the Python API are converted.
+
+* google/appengine/api/memcache: 80% (usable)
+* google/appengine/api/urlfetch: 80% (usable)
+* google/appengine/api/mail: 60% (usable)
+* google/appengine/api/images: 0%
+* google/appengine/api/users: 10%
+* google/appengine/ext/db: 50% (usable, expect minor API changes)
+* google/appengine/ext/db/forms: 20% (expect API changes)
+
+
+Datastore
+---------
+
+The Python ext/db api is supported. The API is slightly different to better fit JavaScript:
+
+    var Category = exports.Category = function(term, label, category) {
+	    this.term = term;
+	    this.label = label;
+	    this.category = category;
+	    this.__key__ = Category.key(this);
+    }
+
+    Category.model = new db.Model(Category, "Category", {
+	    term: new db.StringProperty(),
+	    label: new db.StringProperty(),
+	    category: new db.ReferenceProperty({referenceClass: Category})
+    });
+
+    Category.key = function(obj) {
+        return db.key("Category", obj.term);
+    }
+
+    var c = new Category("news", News");
+    c.put();
+    var key = ...
+    var c1 = Category.get(key);
+    var c2 = Category.getByKeyName("news");
+    var categories = Category.all().limit(3).fetch();
 
 
 Example
