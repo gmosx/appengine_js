@@ -3,15 +3,12 @@ Google App Engine support for JavaScript
 
 A port of the Python AppEngine API to JavaScript.
 
-Homepage: http://nitrojs.org/
-
-Source & Download: http://github.com/gmosx/appenginejs/
-
-Mailing list: http://groups.google.com/group/nitro-devel
-
-Issue tracking: http://github.com/gmosx/appenginejs/issues
-
-IRC: #nitro on irc.freenode.net    
+* Homepage: [http://nitrojs.org/](http://nitrojs.org/)
+* Source & Download: [http://github.com/gmosx/nitro/](http://github.com/gmosx/appengine/)
+* Documentation: [http://nitrojs.org/docs](http://nitrojs.org/docs)
+* Mailing list: [http://groups.google.com/group/nitro-devel](http://groups.google.com/group/nitro-devel)
+* Issue tracking: [http://github.com/gmosx/nitro/issues](http://github.com/gmosx/appengine/issues)
+* IRC: #nitrojs on [irc.freenode.net](http://freenode.net/)    
 
 
 Component status
