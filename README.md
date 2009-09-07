@@ -19,7 +19,7 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/memcache: 80% (usable)
 * google/appengine/api/urlfetch: 80% (usable)
 * google/appengine/api/mail: 60% (usable)
-* google/appengine/api/images: 0%
+* google/appengine/api/images: 20% (usable)
 * google/appengine/api/users: 10%
 * google/appengine/ext/db: 50% (usable, expect minor API changes)
 * google/appengine/ext/db/forms: 20% (expect API changes)
