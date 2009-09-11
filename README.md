@@ -30,8 +30,6 @@ Datastore
 
 The Python ext/db api is supported. The API is slightly different to better fit JavaScript.
 
-Datastore:
-
     var db = require("google/appengine/ext/db");
 
     var Category = function(term, label, category) {
@@ -58,12 +56,16 @@ Datastore:
     var c2 = Category.getByKeyName("news");
     var categories = Category.all().limit(3).fetch();
 
-Images:
+
+Images
+------
 
     var images = require("google/appengine/api/images");
     var i = images.resize(params.image.data, 640, 480);
 
-Email:
+
+Email
+-----
 
     var EmailMessage = require("google/appengine/api/mail").EmailMessage;
 
@@ -74,7 +76,9 @@ Email:
         body: template.render(params)
     }).send();
 
-Memcache:
+
+Memcache
+--------
 
     var memcache = require("google/appengine/api/memcache");
     
