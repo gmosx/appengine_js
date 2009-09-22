@@ -19,10 +19,10 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/memcache: 80% (usable)
 * google/appengine/api/urlfetch: 80% (usable)
 * google/appengine/api/mail: 60% (usable)
-* google/appengine/api/images: 20% (usable)
+* google/appengine/api/images: 40% (usable)
 * google/appengine/api/users: 10%
-* google/appengine/ext/db: 50% (usable, expect minor API changes)
-* google/appengine/ext/db/forms: 20% (expect API changes)
+* google/appengine/ext/db: 60% (usable, expect minor API changes)
+* google/appengine/ext/db/forms: 30% (expect API changes)
 
 
 Datastore
@@ -36,18 +36,14 @@ The Python ext/db api is supported. The API is slightly different to better fit 
 	    this.term = term;
 	    this.label = label;
 	    this.category = category;
-	    this.__key__ = Category.key(this);
+	    this.__key__ = db.key({kind: this.constructor.kind(), name: term});
     }
 
-    Category.model = new db.Model(Category, "Category", {
+    db.Model.extend(Category, "Category", {
 	    term: new db.StringProperty(),
 	    label: new db.StringProperty(),
 	    category: new db.ReferenceProperty({referenceClass: Category})
     });
-
-    Category.key = function(obj) {
-        return db.key("Category", obj.term);
-    }
 
     var c = new Category("news", News");
     c.put();
