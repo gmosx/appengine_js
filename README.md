@@ -115,6 +115,12 @@ Credits
 George Moschovitis <george.moschovitis@gmail.com>
 
 
+Google App Engine
+-----------------
+
+App Engine is a service of Google, Inc. Copyright (c) 2009 Google, all rights reserved.
+
+
 License
 -------
 
