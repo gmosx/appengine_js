@@ -21,9 +21,9 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/mail: 60% (usable)
 * google/appengine/api/images: 40% (usable)
 * google/appengine/api/users: 80% (usable)
+* google/appengine/api/lab/taskqueue: 80% (usable)
 * google/appengine/ext/db: 80% (usable, expect minor API changes)
 * google/appengine/ext/db/forms: 30% (expect API changes)
-* google/appengine/api/lab/taskqueue: 10%
 
 
 Datastore
@@ -90,7 +90,18 @@ Users
     }
     
     var url = user.createLoginURL();
+
+
+Task Queue
+----------
+
+    var taskqueue = require("google/appengine/api/labs/taskqueue");
     
+    taskqueue.add({url: "/worker", method: "GET", params: {par1: "hello", par2: "world"}});  
+    
+    var task = new Task({url: "/worker", method: "GET", params: {par1: "hello", par2: "world"}});
+    task.add("customqueue");
+
 
 Example
 -------
