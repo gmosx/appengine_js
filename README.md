@@ -11,21 +11,6 @@ Welcome to Google App Engine for JavaScript! With App Engine, you can build web 
 * IRC: #nitrojs on [irc.freenode.net](http://freenode.net/)    
 
 
-Component status
-----------------
-
-This library is under construction but usable. Substantial parts of the Python API are converted.
-
-* google/appengine/api/memcache: 80% (usable)
-* google/appengine/api/urlfetch: 80% (usable)
-* google/appengine/api/mail: 60% (usable)
-* google/appengine/api/images: 40% (usable)
-* google/appengine/api/users: 80% (usable)
-* google/appengine/api/labs/taskqueue: 80% (usable)
-* google/appengine/ext/db: 80% (usable, expect minor API changes)
-* google/appengine/ext/db/forms: 30% (expect API changes)
-
-
 Datastore
 ---------
 
@@ -107,6 +92,21 @@ Example
 -------
 
 For an example of the usage of this library have a look at the [blog-gae](http://github.com/gmosx/blog-gae) example.
+
+
+Component status
+----------------
+
+This library is under construction but usable. Substantial parts of the Python API are converted.
+
+* google/appengine/api/memcache: 80% (usable)
+* google/appengine/api/urlfetch: 80% (usable)
+* google/appengine/api/mail: 60% (usable)
+* google/appengine/api/images: 40% (usable)
+* google/appengine/api/users: 80% (usable)
+* google/appengine/api/labs/taskqueue: 80% (usable)
+* google/appengine/ext/db: 80% (usable, expect minor API changes)
+* google/appengine/ext/db/forms: 30% (expect API changes)
 
 
 Credits
