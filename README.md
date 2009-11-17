@@ -21,7 +21,7 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/mail: 60% (usable)
 * google/appengine/api/images: 40% (usable)
 * google/appengine/api/users: 80% (usable)
-* google/appengine/api/lab/taskqueue: 80% (usable)
+* google/appengine/api/labs/taskqueue: 80% (usable)
 * google/appengine/ext/db: 80% (usable, expect minor API changes)
 * google/appengine/ext/db/forms: 30% (expect API changes)
 
