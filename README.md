@@ -1,7 +1,7 @@
-Google App Engine support for JavaScript
+Google App Engine SDK for JavaScript
 ========================================
 
-A port of the Python AppEngine API to JavaScript.
+Welcome to Google App Engine for JavaScript! With App Engine, you can build web applications using the JavaScript programming language, and take advantage of the many libraries, tools and frameworks for JavaScript that professional developers use to build world-class web applications. Your JavaScript application runs on Google's scalable infrastructure on top of Java and Rhino, and uses large-scale persistent storage and services.
 
 * Homepage: [http://nitrojs.org/](http://nitrojs.org/)
 * Source & Download: [http://github.com/gmosx/nitro/](http://github.com/gmosx/appengine/)
