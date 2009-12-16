@@ -1,16 +1,18 @@
-Google App Engine SDK for JavaScript
-====================================
+App Engine JavaScript SDK
+=========================
 
 Welcome to Google App Engine for JavaScript! With App Engine, you can build web applications using the JavaScript programming language, and take advantage of the many libraries, tools and frameworks for JavaScript that professional developers use to build world-class web applications. Your JavaScript application runs on Google's scalable infrastructure on top of Java and Rhino, and uses large-scale persistent storage and services.
 
 *This is a community project, not affiliated in any way with Google.*
 
-* Homepage: [http://nitrojs.org/](http://nitrojs.org/)
-* Source & Download: [http://github.com/gmosx/nitro/](http://github.com/gmosx/appengine/)
-* Documentation: [http://nitrojs.org/docs](http://nitrojs.org/docs)
-* Mailing list: [http://groups.google.com/group/nitro-devel](http://groups.google.com/group/nitro-devel)
-* Issue tracking: [http://github.com/gmosx/nitro/issues](http://github.com/gmosx/appengine/issues)
-* IRC: #nitrojs on [irc.freenode.net](http://freenode.net/)    
+* Homepage: [http://appenginejs.org/](http://appenginejs.org/)
+* Source & Download: [http://github.com/gmosx/appengine/](http://github.com/gmosx/appengine/)
+* Documentation: [http://nitrojs.org/docs](http://appenginejs.org)
+* Mailing list: [http://groups.google.com/group/appenginejs](http://groups.google.com/group/appenginejs)
+* Issue tracking: [http://github.com/gmosx/appengine/issues](http://github.com/gmosx/appengine/issues)
+* IRC: #appenginejs on [irc.freenode.net](http://freenode.net/)
+
+This SDK is part of the [Nitro](http://www.nitrojs.org) ecosystem of Web Application development resources. The SDK tracks the latest developments in the <a href="http://commonjs.org">CommonJS</a> group.
 
 
 Datastore
@@ -104,17 +106,18 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/memcache: 80% (usable)
 * google/appengine/api/urlfetch: 80% (usable)
 * google/appengine/api/mail: 60% (usable)
-* google/appengine/api/images: 40% (usable)
+* google/appengine/api/images: 60% (usable)
 * google/appengine/api/users: 80% (usable)
 * google/appengine/api/labs/taskqueue: 80% (usable)
 * google/appengine/ext/db: 80% (usable, expect minor API changes)
 * google/appengine/ext/db/forms: 30% (expect API changes)
+* google/appengine/ext/blobstore: 0%
 
 
 Credits
 -------
 
-George Moschovitis <george.moschovitis@gmail.com>
+* George Moschovitis, [george.moschovitis@gmail.com](mailto:george.moschovitis@gmail.com)
 
 
 Google App Engine
@@ -122,13 +125,13 @@ Google App Engine
 
 This is a community project, not affiliated in any way with Google.
 
-Google App Engine is a service of Google, Inc. Copyright (c) 2009 Google, all rights reserved.
+Google App Engine is a service of Google, Inc. Copyright (c) 2009 [Google](http://www.google.com), all rights reserved.
 
 
 License
 -------
 
-Copyright (c) 2009 George Moschovitis, http://gmosx.com
+Copyright (c) 2009 George Moschovitis, [http://gmosx.com](http://www.gmosx.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
