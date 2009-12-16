@@ -6,6 +6,7 @@ Welcome to Google App Engine for JavaScript! With App Engine, you can build web 
 *This is a community project, not affiliated in any way with Google.*
 
 * Homepage: [http://appenginejs.org/](http://appenginejs.org/)
+* Status updates: [http://twitter.com/appenginejs](http://twitter.com/appenginejs)
 * Source & Download: [http://github.com/gmosx/appengine/](http://github.com/gmosx/appengine/)
 * Documentation: [http://nitrojs.org/docs](http://appenginejs.org)
 * Mailing list: [http://groups.google.com/group/appenginejs](http://groups.google.com/group/appenginejs)
