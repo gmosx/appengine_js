@@ -1,19 +1,27 @@
 App Engine JavaScript SDK
 =========================
 
-Welcome to Google App Engine for JavaScript! With App Engine, you can build web applications using the JavaScript programming language, and take advantage of the many libraries, tools and frameworks for JavaScript that professional developers use to build world-class web applications. Your JavaScript application runs on Google's scalable infrastructure on top of Java and Rhino, and uses large-scale persistent storage and services.
+Welcome to App Engine for JavaScript! With App Engine, you can build web applications using the JavaScript programming language, and take advantage of the many libraries, tools and frameworks for JavaScript that professional developers use to build world-class web applications. Your JavaScript application runs on Google's scalable infrastructure on top of Java and Rhino, and uses large-scale persistent storage and services.
 
 *This is a community project, not affiliated in any way with Google.*
 
-* Homepage: [http://appenginejs.org/](http://appenginejs.org/)
-* Status updates: [http://twitter.com/appenginejs](http://twitter.com/appenginejs)
 * Source & Download: [http://github.com/gmosx/appengine/](http://github.com/gmosx/appengine/)
-* Documentation: [http://nitrojs.org/docs](http://appenginejs.org)
+* Status updates: [http://twitter.com/appenginejs](http://twitter.com/appenginejs)
+* Homepage: [http://appenginejs.org/](http://appenginejs.org/)
+* Documentation: [http://appenginejs.org](http://appenginejs.org)
 * Mailing list: [http://groups.google.com/group/appenginejs](http://groups.google.com/group/appenginejs)
 * Issue tracking: [http://github.com/gmosx/appengine/issues](http://github.com/gmosx/appengine/issues)
 * IRC: #appenginejs on [irc.freenode.net](http://freenode.net/)
 
 This SDK is part of the [Nitro](http://www.nitrojs.org) ecosystem of Web Application development resources. The SDK tracks the latest developments in the <a href="http://commonjs.org">CommonJS</a> group.
+
+
+Design and Implementation
+-------------------------
+
+The SDK is powered by [Rhino](http://www.mozilla.org/rhino/) on top of [App Engine Java](http://code.google.com/appengine/docs/java/overview.html). However, the API is based on [App Engine Python](http://code.google.com/appengine/docs/python/overview.html). In our view, the design of the Python API is closer to the JavaScript world. 
+
+As a result, a developer can consult the [App Engine Python](http://code.google.com/appengine/docs/python/overview.html) documentation to work effectively with the JavaScript SDK.
 
 
 Datastore
@@ -93,6 +101,20 @@ Task Queue
     task.add("customqueue");
 
 
+Forms
+-----
+
+    var Article = require("article").Article,
+        ModelForm = require("google/appengine/ext/db/forms").ModelForm,
+        ArticleForm = ModelForm(Article);
+
+        ...
+        
+    var form = new ArticleForm(params, {instance: article});
+        ...
+        form.save();
+     
+
 Example
 -------
 
@@ -126,7 +148,7 @@ Google App Engine
 
 This is a community project, not affiliated in any way with Google.
 
-Google App Engine is a service of Google, Inc. Copyright (c) 2009 [Google](http://www.google.com), all rights reserved.
+[Google App Engine](http://appengine.google.com) is a service of Google, Inc. Copyright (c) 2009 [Google](http://www.google.com), all rights reserved.
 
 
 License
