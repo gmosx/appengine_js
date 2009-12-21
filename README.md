@@ -118,7 +118,7 @@ Forms
 Example
 -------
 
-For an example of the usage of this library have a look at the [blog-gae](http://github.com/gmosx/blog-gae) example.
+For an example of the usage of this library have a look at the [blog-gae](http://www.nitrojs.org/appenginejs/blog-gae.tar.gz) example.
 
 
 Component status
