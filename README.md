@@ -42,7 +42,38 @@ The Python ext/db api is supported. The API is slightly different to better fit 
     var c1 = Category.get(key);
     var c2 = Category.getByKeyName("news");
     var categories = Category.all().limit(3).fetch();
+         
 
+Blobstore
+--------- 
+
+Upload form
+   
+   <form action="{uploadUrl}" method="post" enctype="multipart/form-data">
+       <input type="file" name="myFile">
+       <input type="submit" value="Submit">
+   </form>
+   
+Upload 
+
+    exports.POST = function(env) {
+        var blobinfo = blobs.getUploadedBlobs(env); 
+        return {
+            status : 303,
+            headers : {
+                "Location": "/download?blob-key=" + blobinfo.myFile
+            }
+        }; 
+    };
+    
+Download
+    
+    exports.GET = function(env) {
+        var params = new Request(env).params();
+        blobs.serve(env, params["blob-key"]); 
+        return {};
+    }
+    
 
 Images
 ------
