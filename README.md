@@ -23,6 +23,8 @@ The SDK is powered by [Rhino](http://www.mozilla.org/rhino/) on top of [App Engi
 
 As a result, a developer can consult the [App Engine Python](http://code.google.com/appengine/docs/python/overview.html) documentation to work effectively with the JavaScript SDK.
 
+We use JavaScript coding conventions. Python names like 'this_is_a_name' are converted to JavaScript names like 'thisIsAName'. Moreover all delete() functions are renamed to .remove() functions to avoid collisions with the delete keyword (a DELETE() alias is also provided but it's uses is not recommended and may be deprecated in the future). 
+
 
 Datastore
 ---------
@@ -47,32 +49,7 @@ The Python ext/db api is supported. The API is slightly different to better fit 
 Blobstore
 --------- 
 
-Upload form
-   
-   <form action="{uploadUrl}" method="post" enctype="multipart/form-data">
-       <input type="file" name="myFile">
-       <input type="submit" value="Submit">
-   </form>
-   
-Upload 
-
-    exports.POST = function(env) {
-        var blobinfo = blobs.getUploadedBlobs(env); 
-        return {
-            status : 303,
-            headers : {
-                "Location": "/download?blob-key=" + blobinfo.myFile
-            }
-        }; 
-    };
-    
-Download
-    
-    exports.GET = function(env) {
-        var params = new Request(env).params();
-        blobs.serve(env, params["blob-key"]); 
-        return {};
-    }
+NOT implemented yet.
     
 
 Images
@@ -172,6 +149,7 @@ Credits
 -------
 
 * George Moschovitis, [george.moschovitis@gmail.com](mailto:george.moschovitis@gmail.com)
+* Roberto Saccon [rsaccon@gmail.com](mailto:rsaccon@gmail.com)
 
 
 Google App Engine
