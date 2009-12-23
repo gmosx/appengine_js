@@ -49,8 +49,59 @@ The Python ext/db api is supported. The API is slightly different to better fit 
 Blobstore
 --------- 
 
-NOT implemented yet.
+form:
+
+    var blobstore = require("google/appengine/api/blobstore");
+
+    exports.GET = function(env) {
+        return {data: {
+            uploadURL: blobstore.createUploadUrl("/test")
+        }}
+    }
+
+    <form action="{uploadURL}" method="POST" enctype="multipart/form-data">
+        <p>
+            <input type="file" name="file" />
+        </p>
+        <p>       
+            <button type="submit">Upload</button>
+        </p>
+    </form>
+
+upload:
+
+    var blobstore = require("google/appengine/api/blobstore");
+
+    exports.GET = function(env) {
+        return {data: {
+            uploadURL: blobstore.createUploadUrl("/save")
+        }}
+    }
+
+save:
+
+    var blobstore = require("google/appengine/api/blobstore");
+
+    exports.POST = function(env) {
+        var blobs = blobstore.getUploadedBlobs(env);
+        
+        return {
+            status : 303,
+            headers : {
+                "Location": "/serve?key=" + blobs.file.toString()
+            }
+        };     
+    }
     
+serve:
+
+    var blobstore = require("google/appengine/api/blobstore");
+
+    exports.GET = function(env) {
+        var params = new Request(env).GET();
+        return blobstore.serve(params.key, env);
+    }
+
 
 Images
 ------
