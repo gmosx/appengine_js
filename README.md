@@ -106,10 +106,10 @@ serve:
 URL Fetch
 ---------
 
-var fetch = require("google/appengine/api/urlfetch").fetch;
+    var fetch = require("google/appengine/api/urlfetch").fetch;
 
-var response = fetch("http://www.appenginejs.org"),
-    html = response.content.decodeToString("UTF-8");
+    var response = fetch("http://www.appenginejs.org"),
+        html = response.content.decodeToString("UTF-8");
 
 
 Images
