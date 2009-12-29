@@ -103,6 +103,15 @@ serve:
     }
 
 
+URL Fetch
+---------
+
+var fetch = require("google/appengine/api/urlfetch").fetch;
+
+var response = fetch("http://www.appenginejs.org"),
+    html = response.content.decodeToString("UTF-8");
+
+
 Images
 ------
 
@@ -193,7 +202,7 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/labs/taskqueue: 80% (usable)
 * google/appengine/ext/db: 80% (usable, expect minor API changes)
 * google/appengine/ext/db/forms: 30% (expect API changes)
-* google/appengine/ext/blobstore: 0%
+* google/appengine/ext/blobstore: 40% (usable)
 
 
 Credits
