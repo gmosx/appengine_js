@@ -34,17 +34,17 @@ To deploy to App Engine:
 
 Before deploying you may want to remove excess files from packages. You need to *keep* the following files:
 
-example/war/WEB-INF/packages/appengine/lib
-example/war/WEB-INF/packages/appengine/package.json
-example/war/WEB-INF/packages/jack/lib
-example/war/WEB-INF/packages/jack/package.json
-example/war/WEB-INF/packages/narwhal/engines/default
-example/war/WEB-INF/packages/narwhal/engines/rhino
-example/war/WEB-INF/packages/narwhal/lib
-example/war/WEB-INF/packages/narwhal/local.json
-example/war/WEB-INF/packages/narwhal/narwhal.conf
-example/war/WEB-INF/packages/narwhal/narwhal.js
-example/war/WEB-INF/packages/narwhal/package.json
+    example/war/WEB-INF/packages/appengine/lib
+    example/war/WEB-INF/packages/appengine/package.json
+    example/war/WEB-INF/packages/jack/lib
+    example/war/WEB-INF/packages/jack/package.json
+    example/war/WEB-INF/packages/narwhal/engines/default
+    example/war/WEB-INF/packages/narwhal/engines/rhino
+    example/war/WEB-INF/packages/narwhal/lib
+    example/war/WEB-INF/packages/narwhal/local.json
+    example/war/WEB-INF/packages/narwhal/narwhal.conf
+    example/war/WEB-INF/packages/narwhal/narwhal.js
+    example/war/WEB-INF/packages/narwhal/package.json
 
 
 Support
