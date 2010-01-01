@@ -14,19 +14,37 @@ Setup the application:
 Create symbolic links to the required narwhal packages:
     
     $ cd war/WEB-INF/packages
-    $ mkdir appengine narwhal jack
-    $ ln -s /path/to/appengine/lib appengine/.
-    $ ln -s /path/to/appengine/package.json appengine/.
-    $ ln -s /path/to/narwhal/lib narwhal/.
-    $ ln -s /path/to/narwhal/package.json narwhal/.
-    $ ln -s /path/to/jack/lib jack/.
-    $ ln -s /path/to/jack/package.json jack/.
+    $ ln -s /path/to/narwhal .
+    $ ln -s /path/to/jack .
+    $ ln -s /path/to/appengine .
 
 Start the dev server:
 
     $ ant runserver
 
 and browse to http://localhost:8080/
+
+
+Deploy to App Engine
+====================
+
+To deploy to App Engine:
+
+    $ /path/to/appengine/sdk/bin/appcfg.sh --email=your.email@account.com update war/
+
+Before deploying you may want to remove excess files from packages. You need to *keep* the following files:
+
+example/war/WEB-INF/packages/appengine/lib
+example/war/WEB-INF/packages/appengine/package.json
+example/war/WEB-INF/packages/jack/lib
+example/war/WEB-INF/packages/jack/package.json
+example/war/WEB-INF/packages/narwhal/engines/default
+example/war/WEB-INF/packages/narwhal/engines/rhino
+example/war/WEB-INF/packages/narwhal/lib
+example/war/WEB-INF/packages/narwhal/local.json
+example/war/WEB-INF/packages/narwhal/narwhal.conf
+example/war/WEB-INF/packages/narwhal/narwhal.js
+example/war/WEB-INF/packages/narwhal/package.json
 
 
 Support
