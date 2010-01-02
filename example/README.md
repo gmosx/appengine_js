@@ -17,11 +17,11 @@ or create a build.properties file with the following contents:
     sdk.dir=/path/to/appengine/sdk
     git.dir=/path/to/git/bin/directory
     
-Initialize the library dependencies:
+initialize the library dependencies:
     
     $ ant init
 
-Start the dev server:
+start the dev server:
 
     $ ant runserver
 
