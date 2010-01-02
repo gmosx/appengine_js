@@ -1,6 +1,10 @@
 <project name="appengine-example" default="datanucleusenhance">
+  <property file="build.properties"/>
   <property environment="env"/>
   <property name="sdk.dir" location="${env.APPENGINE_JAVA_SDK}" />
+  <property name="git.dir" location="${env.GIT_EXEC_PATH}" />
+
+  <property name="packages.dir" location="war/WEB-INF/packages" />
 
   <import file="${sdk.dir}/config/user/ant-macros.xml" />
 
@@ -13,6 +17,35 @@
       <include name="shared/**/*.jar" />
     </fileset>
   </path>
+
+  <available file="${packages.dir}" type="dir" property="packages.exists"/>
+  
+  <target name="init" description="Initialize appenginejs" unless="packages.exists">
+    <mkdir dir="${packages.dir}"/>
+
+    <exec executable="${git.dir}/git">
+      <arg line="clone git://github.com/gmosx/narwhal.git"/>
+    </exec>
+    <move file="${basedir}/narwhal/local.json.template" tofile="${basedir}/narwhal/local.json"/>
+    <move file="${basedir}/narwhal/narwhal.conf.template" tofile="${basedir}/narwhal/narwhal.conf"/>
+    <exec executable="ln">
+      <arg line="-s ${basedir}/narwhal ${packages.dir}/"/>
+    </exec>
+
+    <exec executable="${git.dir}/git">
+      <arg line="clone git://github.com/gmosx/jack.git"/>
+    </exec>
+    <exec executable="ln">
+      <arg line="-s ${basedir}/jack ${packages.dir}/"/>
+    </exec>
+
+    <exec executable="${git.dir}/git">
+      <arg line="clone git://github.com/gmosx/appengine.git"/>
+    </exec>
+    <exec executable="ln">
+      <arg line="-s ${basedir}/appengine ${packages.dir}/"/>
+    </exec>
+  </target>
 
   <target name="copyjars"
       description="Copies the App Engine JARs to the WAR.">

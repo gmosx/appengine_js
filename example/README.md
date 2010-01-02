@@ -10,13 +10,16 @@ Quick start
 Setup the application:
 
     $ export APPENGINE_JAVA_SDK=/path/to/appengine/sdk
+    $ export GIT_EXEC_PATH=/path/to/git/bin/directory
+
+or create a build.properties file with the following contents:
+
+sdk.dir=/path/to/appengine/sdk
+git.dir=/path/to/git/bin/directory
     
-Create symbolic links to the required narwhal packages:
+Initialize the library dependencies:
     
-    $ cd war/WEB-INF/packages
-    $ ln -s /path/to/narwhal .
-    $ ln -s /path/to/jack .
-    $ ln -s /path/to/appengine .
+    $ ant init
 
 Start the dev server:
 
