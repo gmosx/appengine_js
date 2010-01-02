@@ -14,8 +14,8 @@ Setup the application:
 
 or create a build.properties file with the following contents:
 
-sdk.dir=/path/to/appengine/sdk
-git.dir=/path/to/git/bin/directory
+    sdk.dir=/path/to/appengine/sdk
+    git.dir=/path/to/git/bin/directory
     
 Initialize the library dependencies:
     
