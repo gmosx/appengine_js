@@ -209,7 +209,8 @@ Credits
 -------
 
 * George Moschovitis, [george.moschovitis@gmail.com](mailto:george.moschovitis@gmail.com)
-* Roberto Saccon [rsaccon@gmail.com](mailto:rsaccon@gmail.com)
+* Panagiotis Astithas, [pastith@gmail.com](mailto:pastith@gmail.com)
+* Roberto Saccon, [rsaccon@gmail.com](mailto:rsaccon@gmail.com)
 
 
 Google App Engine
