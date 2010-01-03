@@ -5,8 +5,8 @@
 
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
     <servlet>
-        <servlet-name>jack</servlet-name>
-        <servlet-class>org.jackjs.JackServlet</servlet-class>
+        <servlet-name>jsgi</servlet-name>
+        <servlet-class>org.appenginejs.JSGIServlet</servlet-class>
         <init-param>
             <param-name>environment</param-name>
             <param-value>local</param-value>
@@ -17,7 +17,7 @@
         </init-param>	
     </servlet>
     <servlet-mapping>
-        <servlet-name>jack</servlet-name>
+        <servlet-name>jsgi</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
     <welcome-file-list>

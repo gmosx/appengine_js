@@ -9,12 +9,12 @@
   <path id="project.classpath">
     <pathelement path="${java.class.path}/" />
     <pathelement location="${sdk.dir}/lib/shared/geronimo-servlet_2.5_spec-1.2.jar"/>
-    <pathelement location="example/war/WEB-INF/lib/js.jar"/>
+    <pathelement location="../example/war/WEB-INF/lib/js.jar"/>
   </path>
 
   <target name="compile" description="Compile java files">
     <mkdir dir="${build.dir}" />
-    <javac srcdir="java" destdir="${build.dir}" debug="on" debuglevel="lines,vars,source" source="1.6">
+    <javac srcdir="." destdir="${build.dir}" debug="on" debuglevel="lines,vars,source" source="1.6">
       <classpath refid="project.classpath" />
     </javac>
   </target>
