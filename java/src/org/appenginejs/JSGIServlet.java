@@ -1,6 +1,5 @@
 package org.appenginejs;
 
-import java.io.IOException;
 import javax.servlet.http.*;
 import javax.servlet.*;
 
