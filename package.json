@@ -2,8 +2,22 @@
     "name": "appengine",
     "description": "A port of the Python AppEngine API to JavaScript",
     "keywords": ["google", "appengine", "cloud", "datastore"],
-    "author": "George Moschovitis",
-    "email": "george.moschovitis@gmail.com",
-    "contributors": [],
+    "maintainers": [
+        {
+            "name": "George Moschovitis",
+            "email": "george.moschovitis@gmail.com"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "George Moschovitis",
+            "email": "george.moschovitis@gmail.com"
+        },
+        {
+            "name": "Christoph Dorn",
+            "email": "christoph@christophdorn.com",
+            "web": "http://www.christophdorn.com/",
+        }
+    ],
     "lib": "lib"
 }
