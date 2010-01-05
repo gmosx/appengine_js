@@ -19,7 +19,7 @@ exports.GET = function(env) {
         body += '<div class="message">No messages, add the first!</div>';
     }
 
-    body += '<form method="POST"><p><label>Author</label><input type="text" name="author" /></p><p><label>Message</label><textarea name="content"></textarea></p><p><button type="submit">Send</button></p></form></body></html>';
+    body += '<form method="POST"><p><label>Author</label><input type="text" name="author" /></p><p><label>Message</label><textarea name="content"></textarea></p><p><button type="submit">Send</button></p></form><br/><br/>' + new Date() + '</body></html>';
 
     return {
         status: 200,

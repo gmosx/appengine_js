@@ -15,6 +15,12 @@
             <param-name>optimizationLevel</param-name>
             <param-value>9</param-value>
         </init-param>	
+        <!--
+        <init-param>
+            <param-name>timezone</param-name>
+            <param-value>Europe/Athens</param-value>
+        </init-param>
+        -->
     </servlet>
     <servlet-mapping>
         <servlet-name>jsgi</servlet-name>

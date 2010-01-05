@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import javax.servlet.*;
 
 import java.io.*;
+import java.util.TimeZone;
 
 import org.mozilla.javascript.*;
 
@@ -15,6 +16,12 @@ public class JSGIServlet extends HttpServlet {
 	
     public void init(ServletConfig config) throws ServletException {
     	super.init(config);
+
+        // Set the timezone
+        String tz = config.getInitParameter("timezone");
+        if (tz != null) {
+            TimeZone.setDefault(TimeZone.getTimeZone(tz));
+        }
 
 		final String modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF"));
 		final String moduleName = getInitParam(config, "module", "jackconfig.js");
