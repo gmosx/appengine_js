@@ -5,20 +5,20 @@
     "maintainers": [
         {
             "name": "George Moschovitis",
-            "email": "george.moschovitis@gmail.com"
-            "web": "http://www.gmosx.com",
+            "email": "george.moschovitis@gmail.com",
+            "web": "http://www.gmosx.com"
         }
     ],
     "contributors": [
         {
             "name": "George Moschovitis",
-            "email": "george.moschovitis@gmail.com"
-            "web": "http://www.gmosx.com",
+            "email": "george.moschovitis@gmail.com",
+            "web": "http://www.gmosx.com"
         },
         {
             "name": "Christoph Dorn",
             "email": "christoph@christophdorn.com",
-            "web": "http://www.christophdorn.com",
+            "web": "http://www.christophdorn.com"
         }
     ],
     "lib": "lib"
