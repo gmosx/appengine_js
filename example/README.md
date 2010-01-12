@@ -10,7 +10,7 @@ Quick start
 Setup the application:
 
     $ export APPENGINE_JAVA_SDK=/path/to/appengine/sdk
-    $ export GIT_EXEC_PATH=/path/to/git/bin/directory
+    $ export GIT_BIN_DIR=/path/to/git/bin/directory
 
 or create a build.properties file with the following contents:
 

@@ -2,7 +2,7 @@
   <property file="build.properties"/>
   <property environment="env"/>
   <property name="sdk.dir" location="${env.APPENGINE_JAVA_SDK}" />
-  <property name="git.dir" location="${env.GIT_EXEC_PATH}" />
+  <property name="git.dir" location="${env.GIT_BIN_DIR}" />
 
   <property name="packages.dir" location="war/WEB-INF/packages" />
 
