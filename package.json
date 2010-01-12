@@ -1,22 +1,24 @@
 {
     "name": "appengine",
-    "description": "A port of the Python AppEngine API to JavaScript",
+    "description": "A port of the Python Google App Engine SDK to JavaScript",
     "keywords": ["google", "appengine", "cloud", "datastore"],
     "maintainers": [
         {
             "name": "George Moschovitis",
             "email": "george.moschovitis@gmail.com"
+            "web": "http://www.gmosx.com",
         }
     ],
     "contributors": [
         {
             "name": "George Moschovitis",
             "email": "george.moschovitis@gmail.com"
+            "web": "http://www.gmosx.com",
         },
         {
             "name": "Christoph Dorn",
             "email": "christoph@christophdorn.com",
-            "web": "http://www.christophdorn.com/",
+            "web": "http://www.christophdorn.com",
         }
     ],
     "lib": "lib"
