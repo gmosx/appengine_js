@@ -28,6 +28,12 @@ start the dev server:
 and browse to http://localhost:8080/
 
 
+Troubleshooting
+===============
+
+If you have problems with the included jsgi.jar, use the ant file java/build.xml to compile a new jar for your system. If you still need help, post a message to the AppengineJS Group at http://groups.google.com/group/appenginejs.
+
+
 Deploy to App Engine
 ====================
 
