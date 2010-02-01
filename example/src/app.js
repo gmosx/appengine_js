@@ -9,7 +9,7 @@ exports.app = function(env) {
 
 exports.GET = function(env) {
     var messages = Message.all().order("-created").fetch(),
-        body = '<html><head><style>label {display: block} .msg { border: 1px solid #ccc; padding: 1em; margin-bottom: 1em }</style></head><body><h1>Guest book</h1>';
+        body = '<html><head><style>label {display: block} .message { border: 1px solid #ccc; padding: 1em; margin-bottom: 1em }</style></head><body><h1>Guest book</h1>';
     
     if (messages.length > 0) {
         messages.forEach(function(m) {
