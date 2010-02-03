@@ -169,6 +169,32 @@ Task Queue
     task.add("customqueue");
 
 
+XMPP
+----
+
+Enable the service in WEB-INF/appengine-web.xml:
+
+    <inbound-services>
+        <service>xmpp_message</service>
+    </inbound-services>
+
+Map a JSGI app at ah/xmpp/message/chat to handle incoming chat messages. Please note that due to current appengine restriction you have to rewrite the PATH_INFO from _ah/... to ah/...
+
+    var Request = require("nitro/request").Request,
+       Message = require("google/appengine/api/xmpp").Message;
+
+    exports.GET = exports.POST = function(env) {
+       var msg = new Message(env);
+       msg.reply("Hello, you said: " + msg.body);
+       return {status: 200};
+    } 
+
+Send an invite:
+
+    var XMPP = require("google/appengine/api/xmpp");
+    XMPP.sendInvite("george.moschovitis@gmail.com");
+    
+
 Forms
 -----
 
@@ -181,7 +207,7 @@ Forms
     var form = new ArticleForm(params, {instance: article});
         ...
         form.save();
-     
+
 
 Example
 -------
@@ -202,7 +228,8 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/labs/taskqueue: 80% (usable)
 * google/appengine/ext/db: 80% (usable, expect minor API changes)
 * google/appengine/ext/db/forms: 30% (expect API changes)
-* google/appengine/ext/blobstore: 40% (usable)
+* google/appengine/api/xmpp: 80% (usable)
+* google/appengine/ext/blobstore: 50% (usable)
 
 
 Credits

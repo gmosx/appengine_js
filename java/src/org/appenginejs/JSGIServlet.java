@@ -26,7 +26,6 @@ public class JSGIServlet extends HttpServlet {
 		final String modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF"));
 		final String moduleName = getInitParam(config, "module", "jackconfig.js");
 		final String appName = getInitParam(config, "app", "app");
-		final String environmentName = getInitParam(config, "environment", null);
 		final int optimizationLevel = Integer.parseInt(getInitParam(config, "optimizationLevel", "9"));
     	
 		final String narwhalHome = getServletContext().getRealPath("WEB-INF/packages/narwhal");
@@ -38,8 +37,23 @@ public class JSGIServlet extends HttpServlet {
 			scope = new ImporterTopLevel(context);
 			
 			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
+			ScriptableObject.putProperty(scope, "SERVLET_CONTEXT",  Context.javaToJS(getServletContext(), scope));
 			//ScriptableObject.putProperty(scope, "$DEBUG",  Context.javaToJS(true, scope));
-			
+
+            String environmentName = getInitParam(config, "environment", null);
+
+            if (environmentName == null) {
+                // if no explicit environmentName is provided, detect if we run on the
+                // actual App Engine Server or the Development server and set the environment
+                // accordingly.
+                // http://blog.stringbuffer.com/2009/04/determining-if-your-code-is-executing.html
+                if (getServletContext().getServerInfo().startsWith("Google App Engine/")) {
+                    environmentName = "hosted";
+                } else {
+                    environmentName = "local";
+                }
+            }                
+
 			// load Narwhal
 			context.evaluateReader(scope, new FileReader(narwhalHome+"/"+narwhalFilename), narwhalFilename, 1, null);
 
