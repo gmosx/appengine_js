@@ -29,13 +29,16 @@ public class JSGIServlet extends HttpServlet {
 		final int optimizationLevel = Integer.parseInt(getInitParam(config, "optimizationLevel", "9"));
     	
 		final String narwhalHome = getServletContext().getRealPath("WEB-INF/packages/narwhal");
-		final String narwhalFilename = "engines/rhino/bootstrap.js";
-		
+		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/packages/narwhal/engines/rhino");
+//		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/packages/narwhal-appengine");
+		final String narwhalFilename = "bootstrap.js";
+
 		Context context = Context.enter();
 		try {
 			context.setOptimizationLevel(optimizationLevel);
 			scope = new ImporterTopLevel(context);
 			
+			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
 			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
 			ScriptableObject.putProperty(scope, "SERVLET_CONTEXT",  Context.javaToJS(getServletContext(), scope));
 			//ScriptableObject.putProperty(scope, "$DEBUG",  Context.javaToJS(true, scope));
@@ -55,7 +58,7 @@ public class JSGIServlet extends HttpServlet {
             }                
 
 			// load Narwhal
-			context.evaluateReader(scope, new FileReader(narwhalHome+"/"+narwhalFilename), narwhalFilename, 1, null);
+			context.evaluateReader(scope, new FileReader(narwhalEngineHome + "/" + narwhalFilename), narwhalFilename, 1, null);
 
             // WARN: set optimization level after bootstraping!
 			context.setOptimizationLevel(optimizationLevel);
