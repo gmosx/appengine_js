@@ -108,9 +108,20 @@ serve:
 URL Fetch
 ---------
 
+Synchronous fetch:
+
     var fetch = require("google/appengine/api/urlfetch").fetch;
 
     var response = fetch("http://www.appenginejs.org"),
+        html = response.content.decodeToString("UTF-8");
+
+Asynchronous fetch:
+
+    var URLFETCH = require("google/appengine/api/urlfetch");
+    
+    var rpc = URLFETCH.createRPC(10);
+    URLFETCH.makeFetchCall("http://www.appenginejs.org");
+    var response = rpc.getResult(),
         html = response.content.decodeToString("UTF-8");
 
 
