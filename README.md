@@ -15,7 +15,7 @@ Welcome to App Engine for JavaScript! With App Engine, you can build web applica
 
 This SDK is part of the [Nitro](http://www.nitrojs.org) ecosystem of Web Application development resources. The SDK tracks the latest developments in the <a href="http://commonjs.org">CommonJS</a> group.
 
-This SDK is used in the [narwhal-appengine](http://github.com/gmosx/narwhal-appengine) Narwhal engine to provide a CommonJS compatible API to the App Engine infrastructure.
+This SDK is used in the [narwhal-appengine](http://github.com/gmosx/narwhal-appengine) [Narwhal](http://www.narwhaljs.org) engine to provide a CommonJS compatible API to the App Engine infrastructure.
 
 
 Design and Implementation
@@ -235,7 +235,7 @@ This library is under construction but usable. Substantial parts of the Python A
 
 * google/appengine/api/memcache: 80% (usable)
 * google/appengine/api/urlfetch: 80% (usable)
-* google/appengine/api/mail: 60% (usable)
+* google/appengine/api/mail: 70% (usable)
 * google/appengine/api/images: 60% (usable)
 * google/appengine/api/users: 80% (usable)
 * google/appengine/api/labs/taskqueue: 80% (usable)
