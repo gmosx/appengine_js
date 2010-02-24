@@ -26,24 +26,24 @@ public class JSGIServlet extends HttpServlet {
 		final String modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF"));
 		final String moduleName = getInitParam(config, "module", "jackconfig.js");
 		final String appName = getInitParam(config, "app", "app");
-		final int optimizationLevel = Integer.parseInt(getInitParam(config, "optimizationLevel", "9"));
     	
 		final String narwhalHome = getServletContext().getRealPath("WEB-INF/packages/narwhal");
 		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/packages/narwhal/engines/rhino");
 //		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/packages/narwhal-appengine");
 		final String narwhalFilename = "bootstrap.js";
 
+		int optimizationLevel = Integer.parseInt(getInitParam(config, "optimizationLevel", "-1"));
+        String environmentName = getInitParam(config, "environment", null);
+
 		Context context = Context.enter();
+
 		try {
-			context.setOptimizationLevel(optimizationLevel);
 			scope = new ImporterTopLevel(context);
 			
 			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
 			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
 			ScriptableObject.putProperty(scope, "SERVLET_CONTEXT",  Context.javaToJS(getServletContext(), scope));
 			//ScriptableObject.putProperty(scope, "$DEBUG",  Context.javaToJS(true, scope));
-
-            String environmentName = getInitParam(config, "environment", null);
 
             if (environmentName == null) {
                 // if no explicit environmentName is provided, detect if we run on the
@@ -55,14 +55,17 @@ public class JSGIServlet extends HttpServlet {
                 } else {
                     environmentName = "local";
                 }
-            }                
+            }
+
+            if (environmentName.equals("hosted")) {
+                optimizationLevel = 9;
+            }
+
+			context.setOptimizationLevel(optimizationLevel);			
 
 			// load Narwhal
 			context.evaluateReader(scope, new FileReader(narwhalEngineHome + "/" + narwhalFilename), narwhalFilename, 1, null);
 
-            // WARN: set optimization level after bootstraping!
-			context.setOptimizationLevel(optimizationLevel);
-			
 			// load Servlet handler "process" method
 			handler = (Function)context.evaluateString(scope, "require('jack/handler/servlet').Servlet.process;", null, 1, null);
 			
