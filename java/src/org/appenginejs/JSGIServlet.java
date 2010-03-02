@@ -38,13 +38,6 @@ public class JSGIServlet extends HttpServlet {
 		Context context = Context.enter();
 
 		try {
-			scope = new ImporterTopLevel(context);
-			
-			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
-			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
-			ScriptableObject.putProperty(scope, "SERVLET_CONTEXT",  Context.javaToJS(getServletContext(), scope));
-			//ScriptableObject.putProperty(scope, "$DEBUG",  Context.javaToJS(true, scope));
-
             if (environmentName == null) {
                 // if no explicit environmentName is provided, detect if we run on the
                 // actual App Engine Server or the Development server and set the environment
@@ -60,6 +53,14 @@ public class JSGIServlet extends HttpServlet {
             if (environmentName.equals("hosted")) {
                 optimizationLevel = 9;
             }
+
+			scope = new ImporterTopLevel(context);
+			
+			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
+			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
+			ScriptableObject.putProperty(scope, "SERVLET_CONTEXT",  Context.javaToJS(getServletContext(), scope));
+			ScriptableObject.putProperty(scope, "RHINO_OPTIMIZATION_LEVEL",  Context.javaToJS(optimizationLevel, scope));
+			//ScriptableObject.putProperty(scope, "$DEBUG",  Context.javaToJS(true, scope));
 
 			context.setOptimizationLevel(optimizationLevel);			
 
