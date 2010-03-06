@@ -58,9 +58,8 @@ public class JSGIServlet extends HttpServlet {
 			
 			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
 			ScriptableObject.putProperty(scope, "NARWHAL_HOME",  Context.javaToJS(narwhalHome, scope));
+			ScriptableObject.putProperty(scope, "NARWHAL_OPTIMIZATION",  Context.javaToJS(optimizationLevel, scope));
 			ScriptableObject.putProperty(scope, "SERVLET_CONTEXT",  Context.javaToJS(getServletContext(), scope));
-			ScriptableObject.putProperty(scope, "RHINO_OPTIMIZATION_LEVEL",  Context.javaToJS(optimizationLevel, scope));
-			//ScriptableObject.putProperty(scope, "$DEBUG",  Context.javaToJS(true, scope));
 
 			context.setOptimizationLevel(optimizationLevel);			
 
@@ -94,6 +93,7 @@ public class JSGIServlet extends HttpServlet {
     
 	public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Context context = Context.enter();
+
 		try	{
 			Object args[] = {app, request, response};
 			handler.call(context, scope, null, args);
