@@ -24,7 +24,7 @@ public class JSGIServlet extends HttpServlet {
         }
 
 		final String modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF"));
-		final String moduleName = getInitParam(config, "module", "jackconfig.js");
+		final String moduleName = getInitParam(config, "module", "src/jackconfig.js");
 		final String appName = getInitParam(config, "app", "app");
     	
 		final String narwhalHome = getServletContext().getRealPath("WEB-INF/packages/narwhal");

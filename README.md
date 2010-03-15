@@ -45,7 +45,9 @@ The Python ext/db api is supported. The API is slightly different to better fit 
     var key = ...
     var c1 = Category.get(key);
     var c2 = Category.getByKeyName("news");
-    var categories = Category.all().limit(3).fetch();
+    var categories = Category.all().fetch(3);
+    ...
+    var comments = Comment.all().ancestor(article).order("-created").withCursor(cursor).fetch(10);
          
 
 Blobstore
@@ -225,7 +227,7 @@ Forms
 Example
 -------
 
-For an example of the usage of this library have a look at the example/ directory. For a more advanced example have a lok at the [blog-gae](http://www.nitrojs.org/appenginejs/blog-gae.tar.gz) example.
+For an example of the usage of this library have a look at the example/ directory. For a more advanced example have a lok at the [appengine-example](http://www.nitrojs.org/appenginejs/appengine-example.tar.gz) example.
 
 
 Component status
