@@ -23,12 +23,9 @@ public class JSGIServlet extends HttpServlet {
             TimeZone.setDefault(TimeZone.getTimeZone(tz));
         }
 
-		String modulesPath = "";
-		if(System.getProperty("os.name").indexOf("Windows")>=0){
-			modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF")).replaceAll("\\\\","\\\\\\\\");
-//			modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF")).replaceAll(Pattern.quote("\\"),"\\\\\\\\");
-		} else {
-			modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF"));
+		String modulesPath = getServletContext().getRealPath(getInitParam(config, "modulesPath", "WEB-INF"));
+		if (System.getProperty("os.name").indexOf("Windows") >= 0) {
+		    modulesPath = modulesPath.replaceAll("\\\\", "\\\\\\\\");
 		}
 		final String moduleName = getInitParam(config, "module", "src/jackconfig.js");
 		final String appName = getInitParam(config, "app", "app");
