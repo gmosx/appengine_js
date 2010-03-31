@@ -30,9 +30,11 @@ public class JSGIServlet extends HttpServlet {
 		final String moduleName = getInitParam(config, "module", "src/jackconfig.js");
 		final String appName = getInitParam(config, "app", "app");
     	
-		final String narwhalHome = getServletContext().getRealPath("WEB-INF/packages/narwhal");
-		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/packages/narwhal/engines/rhino");
+//		final String narwhalHome = getServletContext().getRealPath("WEB-INF/packages/narwhal");
+//		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/packages/narwhal/engines/rhino");
 //		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/packages/narwhal-appengine");
+		final String narwhalHome = getServletContext().getRealPath("WEB-INF/narwhal");
+		final String narwhalEngineHome = getServletContext().getRealPath("WEB-INF/narwhal/engines/rhino");
 		final String narwhalFilename = "bootstrap.js";
 
 		int optimizationLevel = Integer.parseInt(getInitParam(config, "optimizationLevel", "-1"));
