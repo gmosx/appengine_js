@@ -15,7 +15,7 @@ Welcome to App Engine for JavaScript! With App Engine, you can build web applica
 
 This SDK is part of the [Nitro](http://www.nitrojs.org) ecosystem of Web Application development resources. The SDK tracks the latest developments in the <a href="http://commonjs.org">CommonJS</a> group.
 
-This SDK is used in the [narwhal-appengine](http://github.com/gmosx/narwhal-appengine) [Narwhal](http://www.narwhaljs.org) engine to provide a CommonJS compatible API to the App Engine infrastructure.
+This SDK is compatible with [Narwhal](http://www.narwhaljs.org) and [RingoJS](http://www.ringojs.org).
 
 
 Design and Implementation
