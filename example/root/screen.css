@@ -1,0 +1,9 @@
+label {
+    display: block
+} 
+
+.message { 
+    border: 1px solid #ccc; 
+    padding: 1em; 
+    margin-bottom: 1em 
+}

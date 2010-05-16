@@ -1,1 +1,0 @@
-../../src/jackconfig.js

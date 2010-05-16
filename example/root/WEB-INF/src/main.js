@@ -1,18 +1,16 @@
-var Request = require("jack/request").Request,
-    Response = require("jack/response").Response;
-    
-var Message = require("./message").Message;
+var Request = require("ringo/webapp/request").Request,
+    Message = require("./message").Message;
 
-exports.app = function(env) {
-    return exports[env.REQUEST_METHOD](env);
+exports.app = function (env) {
+    return exports[env.method](env);
 }
 
-exports.GET = function(env) {
+exports.GET = function (env) {
     var messages = Message.all().order("-created").fetch(),
-        body = '<html><head><style>label {display: block} .message { border: 1px solid #ccc; padding: 1em; margin-bottom: 1em }</style></head><body><h1>Guest book</h1>';
+        body = '<html><head><link rel="stylesheet" media="screen" href="/screen.css" type="text/css" /></head><body><h1>Guest book</h1>';
     
     if (messages.length > 0) {
-        messages.forEach(function(m) {
+        messages.forEach(function (m) {
             body += '<div class="message"><h3>' + m.author + ':</h3><p>' + m.content + '</p>' + m.created + '</div>';
         });
     } else {
@@ -28,11 +26,15 @@ exports.GET = function(env) {
     }
 }
 
-exports.POST = function(env) {
-    var params = new Request(env).POST(),
+exports.POST = function (env) {
+    var params = new Request(env).params,
         msg = new Message(params);
-        
+
     msg.put();
     
-    return Response.redirect("/");
+    return {
+        status: 303,
+        headers: {Location: "/"},
+        body: ["See other: /"]
+    };
 }
