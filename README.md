@@ -236,7 +236,10 @@ Quota
 Example
 -------
 
-For an example of the usage of this library have a look at the example/ directory. For a more advanced example have a lok at the [appengine-example](http://www.nitrojs.org/appenginejs/appengine-example.tar.gz) example.
+Two examples are provided for the library:
+
+* [appengine-example](http://www.nitrojs.org/appenginejs/appengine-example.tar.gz) - a very simple JSGI application that utilizes the datastore API
+* [appengine-blog-example](http://www.nitrojs.org/appenginejs/appengine-blog-example.tar.gz) - a simple blog powered by AppengineJS and Nitro.
 
 
 Component status
