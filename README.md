@@ -233,8 +233,8 @@ Quota
     quota.megacyclesToCpuSeconds(mcycle);
 
 
-Example
--------
+Examples
+--------
 
 Two examples are provided for the library:
 
