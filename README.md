@@ -15,7 +15,7 @@ Welcome to App Engine for JavaScript! With App Engine, you can build web applica
 
 This SDK is part of the [Nitro](http://www.nitrojs.org) ecosystem of Web Application development resources. The SDK tracks the latest developments in the <a href="http://commonjs.org">CommonJS</a> group.
 
-This SDK is compatible with [Narwhal](http://www.narwhaljs.org) and [RingoJS](http://www.ringojs.org).
+This SDK is compatible with [RingoJS](http://www.ringojs.org). An older version worked with  [Narwhal](http://www.narwhaljs.org) and it should be relatively easy to use the SDK with narwhal (some changes will be required though).
 
 
 Design and Implementation
@@ -119,10 +119,10 @@ Synchronous fetch:
 
 Asynchronous fetch:
 
-    var URLFETCH = require("google/appengine/api/urlfetch");
+    var urlfetch = require("google/appengine/api/urlfetch");
     
-    var rpc = URLFETCH.createRPC(10);
-    URLFETCH.makeFetchCall("http://www.appenginejs.org");
+    var rpc = urlfetch.createRPC(10);
+    urlfetch.makeFetchCall("http://www.appenginejs.org");
     var response = rpc.getResult(),
         html = response.content.decodeToString("UTF-8");
 
@@ -193,10 +193,10 @@ Enable the service in WEB-INF/appengine-web.xml:
         <service>xmpp_message</service>
     </inbound-services>
 
-Map a JSGI app at ah/xmpp/message/chat to handle incoming chat messages. Please note that due to current appengine restriction you have to rewrite the PATH_INFO from _ah/... to ah/...
+Map a JSGI app at ah/xmpp/message/chat to handle incoming chat messages. Please note that due to current appengine restriction you have to rewrite the env.pathInfo from _ah/... to ah/...
 
     var Request = require("nitro/request").Request,
-       Message = require("google/appengine/api/xmpp").Message;
+        Message = require("google/appengine/api/xmpp").Message;
 
     exports.GET = exports.POST = function(env) {
        var msg = new Message(env);
@@ -222,6 +222,15 @@ Forms
     var form = new ArticleForm(params, {instance: article});
         ...
         form.save();
+
+
+Quota
+-----
+
+    var quota = require("google/appengine/api/quota");
+    quota.getRequestCpuUsage();
+    quota.getRequestCpuApiUsage();
+    quota.megacyclesToCpuSeconds(mcycle);
 
 
 Example
