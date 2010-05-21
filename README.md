@@ -233,6 +233,15 @@ Quota
     quota.megacyclesToCpuSeconds(mcycle);
 
 
+OAuth
+-----
+
+    var oauth = require("google/appengine/api/oauth");
+    var user = oauth.getCurrentUser();
+    oauth.isCurrentUserAdmin();
+    var key = oauth.getOAuthConsumerKey();
+
+
 Examples
 --------
 
@@ -247,16 +256,17 @@ Component status
 
 This library is under construction but usable. Substantial parts of the Python API are converted.
 
-* google/appengine/api/memcache: 80% (usable)
+* google/appengine/api/memcache: 90% (usable)
 * google/appengine/api/urlfetch: 80% (usable)
-* google/appengine/api/mail: 70% (usable)
+* google/appengine/api/mail: 80% (usable)
 * google/appengine/api/images: 60% (usable)
-* google/appengine/api/users: 80% (usable)
+* google/appengine/api/users: 90% (usable)
 * google/appengine/api/labs/taskqueue: 80% (usable)
 * google/appengine/ext/db: 80% (usable, expect minor API changes)
-* google/appengine/ext/db/forms: 30% (expect API changes)
+* google/appengine/ext/db/forms: 50% (usable, expect API changes)
 * google/appengine/api/xmpp: 80% (usable)
 * google/appengine/ext/blobstore: 50% (usable)
+* google/appengine/api/oauth: 90% (not tested)
 
 
 Credits
