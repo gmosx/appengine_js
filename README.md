@@ -18,6 +18,17 @@ This SDK is part of the [Nitro](http://www.nitrojs.org) ecosystem of Web Applica
 This SDK is compatible with [RingoJS](http://www.ringojs.org). An older version worked with  [Narwhal](http://www.narwhaljs.org) and it should be relatively easy to use the SDK with narwhal (some changes will be required though).
 
 
+Examples
+--------
+
+Two examples are provided for the library:
+
+* [appengine-example](http://www.nitrojs.org/appenginejs/appengine-example.tar.gz) - a very simple JSGI application that utilizes the datastore API
+* [appengine-blog-example](http://www.nitrojs.org/appenginejs/appengine-blog-example.tar.gz) - a simple blog powered by AppengineJS and Nitro.
+
+The above examples include all the packages required to run them to make setup easier.
+
+
 Design and Implementation
 -------------------------
 
@@ -242,15 +253,6 @@ OAuth
     var key = oauth.getOAuthConsumerKey();
 
 
-Examples
---------
-
-Two examples are provided for the library:
-
-* [appengine-example](http://www.nitrojs.org/appenginejs/appengine-example.tar.gz) - a very simple JSGI application that utilizes the datastore API
-* [appengine-blog-example](http://www.nitrojs.org/appenginejs/appengine-blog-example.tar.gz) - a simple blog powered by AppengineJS and Nitro.
-
-
 Component status
 ----------------
 
@@ -263,7 +265,7 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/users: 90% (usable)
 * google/appengine/api/labs/taskqueue: 80% (usable)
 * google/appengine/ext/db: 80% (usable, expect minor API changes)
-* google/appengine/ext/db/forms: 50% (usable, expect API changes)
+* google/appengine/ext/db/forms: 60% (usable, expect API changes)
 * google/appengine/api/xmpp: 80% (usable)
 * google/appengine/ext/blobstore: 50% (usable)
 * google/appengine/api/oauth: 90% (not tested)
