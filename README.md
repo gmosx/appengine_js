@@ -253,6 +253,18 @@ OAuth
     var key = oauth.getOAuthConsumerKey();
 
 
+Local unit testing
+------------------
+
+    var testing = require("google/appengine/tools/development/testing");
+    
+    exports.testAnExample = function () {
+        testing.setup();
+	assert...
+	testing.teardown();
+    }
+
+
 Component status
 ----------------
 
@@ -269,6 +281,7 @@ This library is under construction but usable. Substantial parts of the Python A
 * google/appengine/api/xmpp: 80% (usable)
 * google/appengine/ext/blobstore: 50% (usable)
 * google/appengine/api/oauth: 90% (not tested)
+* google/appengine/tools/development/testing: 80% (usable, expect API changes)
 
 
 Credits
