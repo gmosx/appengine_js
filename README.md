@@ -260,8 +260,8 @@ Local unit testing
     
     exports.testAnExample = function () {
         testing.setup();
-	assert...
-	testing.teardown();
+	    assert...
+	    testing.teardown();
     }
 
 
