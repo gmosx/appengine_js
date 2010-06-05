@@ -1,5 +1,6 @@
 var assert = require("assert"),
-    testing = require("google/appengine/tools/development/testing");
+    Helper = require("google/appengine/tools/development/testing").Helper,
+    helper = new Helper("datastore");
 
 var db = require("google/appengine/ext/db");
 
@@ -13,18 +14,18 @@ var Child = Base.extend("Child", {
 })
 
 exports.testPut = function () {
-    testing.setup();
+    helper.setup();
     var b = new Base({title: "hello", level: 2});
     b.put();
     var c = Base.get(b.key());
     assert.equal(c.title, "hello");
-    testing.teardown();
+    helper.teardown();
 }
 
 exports.testModelExtension = function () {
-    testing.setup();
+    helper.setup();
     var props = Child.properties();
     assert.ok(props.level);
-    testing.teardown();
+    helper.teardown();
 }
 

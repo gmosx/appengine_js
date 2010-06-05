@@ -256,12 +256,15 @@ OAuth
 Local unit testing
 ------------------
 
-    var testing = require("google/appengine/tools/development/testing");
+var assert = require("assert"),
+    Helper = require("google/appengine/tools/development/testing").Helper,
+    helper = new Helper("datastore", "users");
     
     exports.testAnExample = function () {
-        testing.setup();
-	    assert...
-	    testing.teardown();
+        helper.setup();
+	    assert.equal(...);
+	    ...
+	    helper.teardown();
     }
 
 
