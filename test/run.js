@@ -1,5 +1,6 @@
 exports.testModel = require("./google/appengine/ext/db/model");
 
 if (module === require.main) {
-    java.lang.System.exit(require("test").run(exports));
+    require("test").run(exports);
+    system.exit(0);
 }    
