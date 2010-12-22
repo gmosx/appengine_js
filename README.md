@@ -38,10 +38,11 @@ For short examples on using the various API's please consult the [online documen
 Credits
 -------
 
-* George Moschovitis, [george.moschovitis@gmail.com](mailto:george.moschovitis@gmail.com)
-* Panagiotis Astithas, [pastith@gmail.com](mailto:pastith@gmail.com)
-* Christoph Dorn, [christoph@christophdorn.com](mailto:christoph@christophdorn.com)
-* Roberto Saccon, [rsaccon@gmail.com](mailto:rsaccon@gmail.com)
+* George Moschovitis [george.moschovitis@gmail.com](mailto:george.moschovitis@gmail.com)
+* Kyungwook, Park [parksama@gmail.com](mailto:parksama@gmail.com)
+* Panagiotis Astithas [pastith@gmail.com](mailto:pastith@gmail.com)
+* Christoph Dorn [christoph@christophdorn.com](mailto:christoph@christophdorn.com)
+* Roberto Saccon [rsaccon@gmail.com](mailto:rsaccon@gmail.com)
 
 
 Google App Engine
