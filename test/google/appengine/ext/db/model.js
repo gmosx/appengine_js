@@ -7,11 +7,11 @@ var db = require("google/appengine/ext/db");
 var Base = db.Model.extend("Base", {
     title: new db.StringProperty(),
     level: new db.FloatProperty()
-})
+});
 
 var Child = Base.extend("Child", {
     another: new db.StringProperty()
-})
+});
 
 exports.testPut = function () {
     helper.setup();
@@ -20,12 +20,11 @@ exports.testPut = function () {
     var c = Base.get(b.key());
     assert.equal(c.title, "hello");
     helper.teardown();
-}
+};
 
 exports.testModelExtension = function () {
     helper.setup();
     var props = Child.properties();
     assert.ok(props.level);
     helper.teardown();
-}
-
+};
